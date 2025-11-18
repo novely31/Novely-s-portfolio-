@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Novely Aguilar Gasis | Cyber-Tech Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <div class="brand-left">
+        <div class="brand-text">Novely Aguilar Gasis</div>
+      </div>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#hero"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
+        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+
+        <button id="mobile-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE DROPDOWN -->
+    <nav id="mobile-dropdown" class="mobile-dropdown" aria-hidden="true">
+      <div class="mobile-links">
+        <a href="#hero"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
+        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+      <div class="mobile-socials">
+        <a class="social-link" href="mailto:gasisnovely25@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a class="social-link" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a class="social-link" href="https://github.com/novely31" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN PAGE -->
+  <div class="page">
+    <main class="main">
+
+      <!-- HERO (Profile left, Text right) -->
+      <section id="hero" class="section hero reveal">
+        <div class="hero-inner layout-left">
+
+          <!-- left column: profile -->
+          <div class="hero-col hero-col-left">
+            <div class="hero-profile">
+              <img src="image.jpg" alt="Novely Aguilar Gasis">
+            </div>
+            <div class="hero-name-mini">Novely Aguilar Gasis</div> <!-- small caption under photo on small screens -->
+          </div>
+
+          <!-- right column: text -->
+          <div class="hero-col hero-col-right">
+            <h1 class="hero-title">NOVELY AGUILAR GASIS</h1>
+            <p class="hero-sub">Web Developer • UI Designer • Exploring Data Science . Blockchain</p>
+            <div class="hero-cta-row">
+              <a href="#projects" class="cta neon-hover">View My Work</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section reveal">
+        <h2 class="section-title">/ About Me /</h2>
+        <div class="card">
+          <p>
+            I am <strong>Novely Aguilar Gasis</strong>, a BS Computer Science graduate from
+            <strong>Capiz State University (Dayao, Roxas Capiz)</strong>, graduating in <strong>July 2025</strong>.
+            I build functional, accessible web applications and curently exploring data science and blockchain.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-item"><i class="fas fa-home"></i><div><strong>Residence</strong><div class="muted">Pavia, Iloilo</div></div></div>
+            <div class="info-item"><i class="fas fa-graduation-cap"></i><div><strong>Graduation</strong><div class="muted">July 2025</div></div></div>
+            <div class="info-item"><i class="fas fa-university"></i><div><strong>Institution</strong><div class="muted">Capiz State University</div></div></div>
+          </div>
+
+          <div class="certificate-link-container">
+            <a href="cert.jpg" target="_blank" class="certificate-cta">
+              <i class="fas fa-award"></i> View My Certificate
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section reveal">
+        <h2 class="section-title">/ Skill Set /</h2>
+        <div class="skills-grid card">
+          <div class="skill"><i class="fab fa-html5"></i><span>HTML</span></div>
+          <div class="skill"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+          <div class="skill"><i class="fab fa-js"></i><span>JavaScript</span></div>
+          <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="skill"><i class="fab fa-java"></i><span>Java</span></div>
+          <div class="skill"><i class="fas fa-database"></i><span>MySQL</span></div>
+          <div class="skill"><i class="fas fa-fire"></i><span>Firebase</span></div>
+          <div class="skill"><i class="fab fa-github"></i><span>GitHub</span></div>
+          <div class="skill"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+          <div class="skill"><i class="fas fa-chart-line"></i><span>Data Science</span></div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section reveal">
+        <h2 class="section-title">/ Key Projects /</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-head">
+              <i class="fas fa-hand-holding-usd project-icon"></i>
+              <h3 class="project-title">Student Financial Assistance Recommender System</h3>
+            </div>
+            <p class="project-desc">
+              A web-based recommender that suggests financial assistance programs based on student eligibility and conditions.
+            </p>
+            <div class="tags"><span>Web</span><span>Recommender</span><span>MySQL</span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-head">
+              <i class="fas fa-laptop-code project-icon"></i>
+              <h3 class="project-title">Portfolio & UI Experiments</h3>
+            </div>
+            <p class="project-desc">
+              Responsive layouts, micro-interactions, and modern cyber-tech design experiments.
+            </p>
+            <div class="tags"><span>UI/UX</span><span>CSS</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section reveal">
+        <h2 class="section-title">/ Experience /</h2>
+        <div class="card experience-item">
+          <h3>On-the-Job Training — Social Security System (SSS)</h3>
+          <p><strong>200 hours</strong> in Administrative / e-Center:</p>
+          <ul>
+            <li>SSS number issuance & registration</li>
+            <li>Processing member data</li>
+            <li>Administrative support & filing</li>
+            <li>Guiding members during onboarding</li>
+          </ul>
+          <p class="muted">Strengthened administrative accuracy and workflow skills.</p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section reveal">
+        <h2 class="section-title">/ Contact /</h2>
+        <div class="card contact-card">
+          <p>Let's collaborate:</p>
+          <div class="socials">
+            <a class="contact-social" href="mailto:gasisnovely25@gmail.com" aria-label="Email Novely"><i class="fas fa-envelope"></i></a>
+            <a class="contact-social" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="contact-social" href="https://github.com/novely31" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <small>&copy; 2025 Novely Aguilar Gasis. All Rights Reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
