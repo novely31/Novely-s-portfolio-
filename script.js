@@ -20,8 +20,8 @@ if (mobileToggle && mobileDropdown) {
     a.addEventListener('click', () => {
       mobileDropdown.classList.remove('open');
       mobileToggle.classList.remove('open');
-      mobileToggle.setAttribute('aria-expanded','false');
-      mobileDropdown.setAttribute('aria-hidden','true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileDropdown.setAttribute('aria-hidden', 'true');
     });
   });
 
@@ -31,8 +31,8 @@ if (mobileToggle && mobileDropdown) {
     if (!mobileDropdown.contains(e.target) && !mobileToggle.contains(e.target)) {
       mobileDropdown.classList.remove('open');
       mobileToggle.classList.remove('open');
-      mobileToggle.setAttribute('aria-expanded','false');
-      mobileDropdown.setAttribute('aria-hidden','true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileDropdown.setAttribute('aria-hidden', 'true');
     }
   });
 
@@ -41,10 +41,19 @@ if (mobileToggle && mobileDropdown) {
     if (e.key === 'Escape' && mobileDropdown.classList.contains('open')) {
       mobileDropdown.classList.remove('open');
       mobileToggle.classList.remove('open');
-      mobileToggle.setAttribute('aria-expanded','false');
-      mobileDropdown.setAttribute('aria-hidden','true');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileDropdown.setAttribute('aria-hidden', 'true');
     }
   });
+
+  // Accessibility: focus first mobile link when opened
+  const firstLink = mobileDropdown.querySelector('a');
+  const mo = new MutationObserver(muts => {
+    if (mobileDropdown.classList.contains('open')) {
+      setTimeout(() => firstLink && firstLink.focus(), 200);
+    }
+  });
+  mo.observe(mobileDropdown, { attributes: true, attributeFilter: ['class'] });
 }
 
 // Theme toggle & persist
@@ -78,7 +87,7 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-},{ threshold: 0.15 });
+}, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
@@ -90,31 +99,27 @@ if (heroProfile) {
 }
 
 // Add neon-hover class to interactive items
-document.querySelectorAll('.cta, .project-card, .skill').forEach(el => el.classList.add('neon-hover'));
+document.querySelectorAll('.cta, .project-card, .skill').forEach(el => {
+  el.classList.add('neon-hover');
+});
 
 // 3D tilt for project cards
 document.querySelectorAll('.project-card').forEach(card => {
   card.style.transformStyle = 'preserve-3d';
+  let leaveTimeout;
   card.addEventListener('mousemove', (e) => {
+    clearTimeout(leaveTimeout);
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const rx = ( (y - rect.height / 2) / 18 ).toFixed(2);
-    const ry = ( (rect.width / 2 - x) / 18 ).toFixed(2);
+    const rx = ((y - rect.height / 2) / 18);
+    const ry = ((rect.width / 2 - x) / 18);
     card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
   });
   card.addEventListener('mouseleave', () => {
+    // smooth reset to original
+    card.style.transition = 'transform .35s cubic-bezier(.22,.9,.29,1)';
     card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    leaveTimeout = setTimeout(() => card.style.transition = '', 350);
   });
 });
-
-// Accessibility: focus first mobile link when opened
-if (mobileDropdown) {
-  const firstLink = mobileDropdown.querySelector('a');
-  const mo = new MutationObserver(muts => {
-    if (mobileDropdown.classList.contains('open')) {
-      setTimeout(() => firstLink && firstLink.focus(), 200);
-    }
-  });
-  mo.observe(mobileDropdown, { attributes: true, attributeFilter: ['class'] });
-}
