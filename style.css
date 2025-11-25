@@ -15,6 +15,7 @@
   --neon-green: #a3e635;
   --neon-grad: linear-gradient(90deg,var(--neon-blue),var(--neon-green));
   --shadow: 0 8px 40px rgba(2,6,12,0.6);
+  --accent: #0ea5e9;
 }
 
 /* Light mode */
@@ -27,6 +28,7 @@
   --border: rgba(14,165,233,0.18);
   --neon-blue: #0ea5e9;
   --neon-green: #10b981;
+  --glass: rgba(0,0,0,0.03);
 }
 
 /* Reset */
@@ -211,6 +213,7 @@ body{
   padding:10px 18px;border-radius:999px;background:var(--neon-grad);
   color:#03141a;font-weight:800;transition:0.18s;
 }
+.cta.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04);padding:8px 12px}
 
 /* ===========================
    Cards / Layout Sections
@@ -323,4 +326,30 @@ body{
 
 .light-mode .menu-overlay {
   background: rgba(0, 0, 0, 0.35);
+}
+/* ===========================
+   CHATBOT PRIORITY FIX
+   =========================== */
+
+/* Make chatbot always on top */
+#chatbotContainer,
+.chat-container,
+.input-area,
+#userInput,
+#sendBtn {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+/* Allow clicks to pass through overlays that block the chatbot */
+.menu-overlay,
+.mobile-dropdown {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* Keep actual menu items clickable */
+.mobile-dropdown.open {
+  pointer-events: auto !important;
+  z-index: 999 !important;
 }
