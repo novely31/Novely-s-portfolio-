@@ -12,7 +12,7 @@ const closeChatBtn = document.getElementById("closeChatBtn");
 /* ============================================================
    YOUR API KEY (Use your real key)
    ============================================================ */
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "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;
 
 /* ============================================================
    SHOW / HIDE CHATBOT
