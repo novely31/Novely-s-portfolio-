@@ -1,0 +1,124 @@
+/* Chatbot container hidden by default */
+.chatbot-container {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Chat container */
+.chat-container {
+  width: 100%;
+  max-width: 420px;
+  height: 60vh;
+  background: var(--card-bg);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  color: var(--text);
+  z-index: 9999;
+}
+
+/* Header */
+.chat-header {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Close Button */
+.close-chat {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Chat messages */
+.chat-box {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* Message bubbles */
+.message {
+  margin: 8px 0;
+  padding: 10px 14px;
+  max-width: 85%;
+  border-radius: 10px;
+  word-break: break-word;
+}
+
+.user {
+  background: rgba(58,77,255,0.95);
+  color: #fff;
+  margin-left: auto;
+}
+
+.bot {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  margin-right: auto;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.2);
+  color: var(--text);
+}
+
+.input-area button {
+  padding: 10px 16px;
+  background: var(--neon-blue);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Light mode */
+.light-mode .chat-container { background: #fff; }
+.light-mode .bot { background: #eef3ff; color: #000; }
+.light-mode .input-area input { background: #fff; color: #000; }
+/* Copy button inside bot messages */
+.copy-btn {
+  margin-top: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--neon-blue);
+  color: #03141a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.copy-btn:hover {
+  opacity: 0.8;
+}
