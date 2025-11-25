@@ -95,7 +95,7 @@ async function callOpenAI(prompt) {
     return data.choices?.[0]?.message?.content || "Error: No response.";
   } catch (err) {
     console.error(err);
-    return "Network error.";
+    return "Network error.AI API currently disabled,under contruct today ";
   }
 }
 
