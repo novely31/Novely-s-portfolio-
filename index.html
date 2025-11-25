@@ -1,13 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Novely Aguilar Gasis | Cyber-Tech Portfolio</title>
 
+  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Portfolio CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Chatbot CSS -->
+  <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
 
@@ -19,16 +24,16 @@
       </div>
 
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#hero"><i class="fas fa-home"></i> Home</a>
-        <a href="#about"><i class="fas fa-user"></i> About</a>
-        <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-        <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#hero"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#about"><i class="fas fa-user" aria-hidden="true"></i> About</a>
+        <a href="#skills"><i class="fas fa-tools" aria-hidden="true"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a>
+        <a href="#experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a>
+        <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
       </nav>
 
       <div class="nav-controls">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark">
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
 
@@ -39,19 +44,19 @@
     </div>
 
     <!-- MOBILE DROPDOWN -->
-    <nav id="mobile-dropdown" class="mobile-dropdown" aria-hidden="true">
+    <nav id="mobile-dropdown" class="mobile-dropdown" aria-hidden="true" aria-label="Mobile navigation">
       <div class="mobile-links">
-        <a href="#hero"><i class="fas fa-home"></i> Home</a>
-        <a href="#about"><i class="fas fa-user"></i> About</a>
-        <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-        <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#hero"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#about"><i class="fas fa-user" aria-hidden="true"></i> About</a>
+        <a href="#skills"><i class="fas fa-tools" aria-hidden="true"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-laptop-code" aria-hidden="true"></i> Projects</a>
+        <a href="#experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a>
+        <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
       </div>
       <div class="mobile-socials">
-        <a class="social-link" href="mailto:gasisnovely25@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a class="social-link" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a class="social-link" href="https://github.com/novely31" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a class="social-link" href="mailto:gasisnovely25@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+        <a class="social-link" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <a class="social-link" href="https://github.com/novely31" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
       </div>
     </nav>
   </header>
@@ -60,27 +65,24 @@
   <div class="page">
     <main class="main">
 
-      <!-- HERO (Profile left, Text right) -->
+      <!-- HERO -->
       <section id="hero" class="section hero reveal">
         <div class="hero-inner layout-left">
-
-          <!-- left column: profile -->
           <div class="hero-col hero-col-left">
-            <div class="hero-profile">
+            <div class="hero-profile" aria-hidden="true">
+              <!-- Replace image.jpg with your photo file -->
               <img src="image.jpg" alt="Novely Aguilar Gasis">
             </div>
-            <div class="hero-name-mini">Novely Aguilar Gasis</div> <!-- small caption under photo on small screens -->
+            <div class="hero-name-mini">Novely Aguilar Gasis</div>
           </div>
 
-          <!-- right column: text -->
           <div class="hero-col hero-col-right">
             <h1 class="hero-title">NOVELY AGUILAR GASIS</h1>
-            <p class="hero-sub">Web Developer • UI Designer • Exploring Data Science . Blockchain</p>
+            <p class="hero-sub">Web Developer • UI Designer • Exploring Data Science & Blockchain</p>
             <div class="hero-cta-row">
-              <a href="#projects" class="cta neon-hover">View My Work</a>
+              <a href="#projects" class="cta">View My Work</a>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -89,20 +91,18 @@
         <h2 class="section-title">/ About Me /</h2>
         <div class="card">
           <p>
-            I am <strong>Novely Aguilar Gasis</strong>, a BS Computer Science graduate from
-            <strong>Capiz State University (Dayao, Roxas Capiz)</strong>, graduating in <strong>July 2025</strong>.
-            I build functional, accessible web applications and curently exploring data science and blockchain.
+            “I am Novely Aguilar Gasis, a BS Computer Science graduate from Capiz State University. My expertise revolves around front-end development, UI design, and creating responsive, accessible web experiences. I also develop systems that integrate real-time APIs and intelligent automation—such as the custom OpenAI-powered chatbot built directly into this portfolio.
+
+I am currently expanding my skills in Data Science, AI integration, and Blockchain technology. I enjoy solving real problems through practical solutions, continuously improving through research, experimentation, and hands-on development.”
           </p>
-
           <div class="info-grid">
-            <div class="info-item"><i class="fas fa-home"></i><div><strong>Residence</strong><div class="muted">Pavia, Iloilo</div></div></div>
-            <div class="info-item"><i class="fas fa-graduation-cap"></i><div><strong>Graduation</strong><div class="muted">July 2025</div></div></div>
-            <div class="info-item"><i class="fas fa-university"></i><div><strong>Institution</strong><div class="muted">Capiz State University</div></div></div>
+            <div class="info-item" aria-hidden="false"><i class="fas fa-home" aria-hidden="true"></i><div><strong>Residence</strong><div class="muted">Pavia, Iloilo</div></div></div>
+            <div class="info-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i><div><strong>Graduation</strong><div class="muted">July 2025</div></div></div>
+            <div class="info-item"><i class="fas fa-university" aria-hidden="true"></i><div><strong>Institution</strong><div class="muted">Capiz State University</div></div></div>
           </div>
-
           <div class="certificate-link-container">
-            <a href="cert.jpg" target="_blank" class="certificate-cta">
-              <i class="fas fa-award"></i> View My Certificate
+            <a href="cert.jpg" target="_blank" rel="noopener noreferrer" class="certificate-cta">
+              <i class="fas fa-award" aria-hidden="true"></i> View My Certificate
             </a>
           </div>
         </div>
@@ -111,17 +111,17 @@
       <!-- SKILLS -->
       <section id="skills" class="section reveal">
         <h2 class="section-title">/ Skill Set /</h2>
-        <div class="skills-grid card">
-          <div class="skill"><i class="fab fa-html5"></i><span>HTML</span></div>
-          <div class="skill"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-          <div class="skill"><i class="fab fa-js"></i><span>JavaScript</span></div>
-          <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
-          <div class="skill"><i class="fab fa-java"></i><span>Java</span></div>
-          <div class="skill"><i class="fas fa-database"></i><span>MySQL</span></div>
-          <div class="skill"><i class="fas fa-fire"></i><span>Firebase</span></div>
-          <div class="skill"><i class="fab fa-github"></i><span>GitHub</span></div>
-          <div class="skill"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-          <div class="skill"><i class="fas fa-chart-line"></i><span>Data Science</span></div>
+        <div class="skills-grid card" role="list">
+          <div class="skill" role="listitem"><i class="fab fa-html5" aria-hidden="true"></i><span>HTML</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-css3-alt" aria-hidden="true"></i><span>CSS</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-java" aria-hidden="true"></i><span>Java</span></div>
+          <div class="skill" role="listitem"><i class="fas fa-database" aria-hidden="true"></i><span>MySQL</span></div>
+          <div class="skill" role="listitem"><i class="fas fa-fire" aria-hidden="true"></i><span>Firebase</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></div>
+          <div class="skill" role="listitem"><i class="fab fa-wordpress" aria-hidden="true"></i><span>WordPress</span></div>
+          <div class="skill" role="listitem"><i class="fas fa-chart-line" aria-hidden="true"></i><span>Data Science</span></div>
         </div>
       </section>
 
@@ -129,10 +129,12 @@
       <section id="projects" class="section reveal">
         <h2 class="section-title">/ Key Projects /</h2>
         <div class="project-grid">
-          <article class="project-card">
+
+          <!-- Example Project -->
+          <article class="project-card" tabindex="0" aria-labelledby="proj1-title">
             <div class="project-head">
-              <i class="fas fa-hand-holding-usd project-icon"></i>
-              <h3 class="project-title">Student Financial Assistance Recommender System</h3>
+              <i class="fas fa-hand-holding-usd project-icon" aria-hidden="true"></i>
+              <h3 id="proj1-title" class="project-title">Student Financial Assistance Recommender System</h3>
             </div>
             <p class="project-desc">
               A web-based recommender that suggests financial assistance programs based on student eligibility and conditions.
@@ -140,16 +142,50 @@
             <div class="tags"><span>Web</span><span>Recommender</span><span>MySQL</span></div>
           </article>
 
-          <article class="project-card">
-            <div class="project-head">
-              <i class="fas fa-laptop-code project-icon"></i>
-              <h3 class="project-title">Portfolio & UI Experiments</h3>
-            </div>
-            <p class="project-desc">
-              Responsive layouts, micro-interactions, and modern cyber-tech design experiments.
-            </p>
-            <div class="tags"><span>UI/UX</span><span>CSS</span></div>
-          </article>
+<!-- Chatbot Project -->
+<article class="project-card" tabindex="0" aria-labelledby="proj2-title">
+  <div class="project-head">
+    <i class="fas fa-robot project-icon" aria-hidden="true"></i>
+    <h3 id="proj2-title" class="project-title">Nove's Chatbot</h3>
+  </div>
+  <p class="project-desc">
+    A fully integrated AI chatbot developed for my portfolio, designed to assist users by answering questions, providing information, and enhancing engagement. It uses OpenAI’s GPT model for accurate responses and includes features such as real-time date awareness, message copy buttons, smooth UI interactions, and mobile-friendly design.”
+  </p>
+
+  <!-- FIXED: Only one button -->
+  <div class="project-actions" style="margin-top:8px;display:flex;gap:8px;">
+    <button class="cta" id="openChatBtn" aria-expanded="false" aria-controls="chatbotContainer">
+      Open Chatbot
+    </button>
+  </div>
+
+  <!-- FIXED CHATBOT STRUCTURE -->
+  <div id="chatbotContainer" class="chatbot-container" aria-hidden="true">
+    <div class="chat-container" role="dialog" aria-label="Portfolio chatbot">
+      <div class="chat-header">
+        <span>Nove's Chatbot</span>
+        <button id="closeChatBtn" class="close-chat" aria-label="Close chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="chat-box" id="chatBox" role="log" aria-live="polite"></div>
+
+      <div class="input-area">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="Type a message..." 
+          autocomplete="off"
+        />
+        <button id="sendBtn" type="button">Send</button>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
         </div>
       </section>
 
@@ -175,9 +211,9 @@
         <div class="card contact-card">
           <p>Let's collaborate:</p>
           <div class="socials">
-            <a class="contact-social" href="mailto:gasisnovely25@gmail.com" aria-label="Email Novely"><i class="fas fa-envelope"></i></a>
-            <a class="contact-social" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a class="contact-social" href="https://github.com/novely31" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a class="contact-social" href="mailto:gasisnovely25@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            <a class="contact-social" href="https://www.linkedin.com/in/novely-gasis-a4a266399" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a class="contact-social" href="https://github.com/novely31" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
           </div>
         </div>
       </section>
@@ -190,6 +226,9 @@
     <small>&copy; 2025 Novely Aguilar Gasis. All Rights Reserved.</small>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Portfolio JS -->
+  <script src="script.js" defer></script>
+  <!-- Chatbot JS -->
+  <script src="chatbot.js" defer></script>
 </body>
 </html>
