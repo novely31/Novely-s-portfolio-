@@ -1,5 +1,5 @@
 /* ============================================================
-   CHATBOT — VERCEL BACKEND + REALTIME DATE/TIME + COPY BUTTON
+   PORTFOLIO CHATBOT — VERCEL BACKEND + REALTIME DATE + COPY BTN
    ============================================================ */
 
 const chatContainer = document.getElementById("chatbotContainer");
@@ -11,7 +11,7 @@ const closeChatBtn = document.getElementById("closeChatBtn");
 
 /* ============================================================
    SHOW / HIDE CHATBOT
-   ============================================================ */
+============================================================ */
 function toggleChatbot() {
   const hidden = chatContainer.style.display === "none" || chatContainer.style.display === "";
   chatContainer.style.display = hidden ? "block" : "none";
@@ -21,26 +21,27 @@ openChatBtn.addEventListener("click", toggleChatbot);
 closeChatBtn.addEventListener("click", toggleChatbot);
 
 /* ============================================================
-   ADD MESSAGE (Supports Copy Button)
-   ============================================================ */
+   APPEND MESSAGE + COPY BUTTON
+============================================================ */
 function appendMessage(text, sender = "bot") {
-  const msg = document.createElement("div");
-  msg.className = `message ${sender}`;
+  const div = document.createElement("div");
+  div.className = `message ${sender}`;
 
   if (sender === "bot") {
-    msg.innerHTML = `
+    div.innerHTML = `
       <div class="msg-text">${text}</div>
       <button class="copy-btn">Copy</button>
     `;
   } else {
-    msg.textContent = text;
+    div.textContent = text;
   }
 
-  chatBox.appendChild(msg);
+  chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 
+  // Copy button behavior
   if (sender === "bot") {
-    const btn = msg.querySelector(".copy-btn");
+    const btn = div.querySelector(".copy-btn");
     btn.addEventListener("click", () => {
       navigator.clipboard.writeText(text);
       btn.textContent = "Copied!";
@@ -50,41 +51,41 @@ function appendMessage(text, sender = "bot") {
 }
 
 /* ============================================================
-   CALL VERCEL BACKEND WITH REALTIME DATE/TIME
-   ============================================================ */
+   CALL VERCEL BACKEND /api/chat
+============================================================ */
 async function callOpenAI(prompt) {
-  const nowPH = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Manila",
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-    hour12: true
-  });
-
   try {
-    const res = await fetch("https://noveportfolio.vercel.app/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: prompt,
-        date: nowPH  // ← SEND REALTIME DATE TO BACKEND
-      })
+    const currentDate = new Date().toLocaleString("en-US", {
+      timeZone: "Asia/Manila",
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true
     });
 
-    const data = await res.json();
-    return data?.choices?.[0]?.message?.content || "No response.";
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: prompt, date: currentDate })
+    });
+
+    const data = await response.json();
+
+    if (!data.choices) return "Server error ❌";
+
+    return data.choices[0].message.content;
+
   } catch (err) {
-    return "Server error. Please try again.";
+    return "Connection error ❌";
   }
 }
 
 /* ============================================================
    SEND MESSAGE
-   ============================================================ */
+============================================================ */
 async function sendMessage() {
   const text = userInput.value.trim();
   if (!text) return;
@@ -92,23 +93,24 @@ async function sendMessage() {
   appendMessage(text, "user");
   userInput.value = "";
 
-  const loader = document.createElement("div");
-  loader.className = "message bot";
-  loader.textContent = "Thinking...";
-  chatBox.appendChild(loader);
+  // Loader
+  const loading = document.createElement("div");
+  loading.className = "message bot";
+  loading.textContent = "Thinking...";
+  chatBox.appendChild(loading);
 
   const reply = await callOpenAI(text);
 
-  loader.innerHTML = `
+  loading.innerHTML = `
     <div class="msg-text">${reply}</div>
     <button class="copy-btn">Copy</button>
   `;
 
-  const btn = loader.querySelector(".copy-btn");
-  btn.addEventListener("click", () => {
+  const copyBtn = loading.querySelector(".copy-btn");
+  copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(reply);
-    btn.textContent = "Copied!";
-    setTimeout(() => (btn.textContent = "Copy"), 1500);
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => (copyBtn.textContent = "Copy"), 1500);
   });
 
   chatBox.scrollTop = chatBox.scrollHeight;
